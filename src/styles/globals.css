@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  font-display: swap;
+  font-synthesis: none;
+}
+
+/* CLS改善のためのCSS */
+* {
+  box-sizing: border-box;
+}
+
+/* レンダリングの最適化 */
+html {
+  font-display: swap;
+  text-rendering: optimizeSpeed; /* レンダリング速度を優先 */
+}
+
+body {
+  font-display: swap;
+  text-rendering: optimizeSpeed;
+}
+
+.ant-card {
+  contain: layout style; /* レイアウトの安定化 */
+}
+
+.ant-modal {
+  contain: layout style; /* モーダルの安定化 */
+}
+
+.ant-pagination {
+  contain: layout style; /* ページネーションの安定化 */
+}
+
+/* ページネーションの安定化 */
+.ant-pagination-item {
+  contain: layout style;
+}
+
+.ant-pagination-prev,
+.ant-pagination-next {
+  contain: layout style;
+}
+
+/* カードの安定化 */
+.ant-card-body {
+  contain: layout style;
+}
+
+/* グリッドの安定化 */
+.ant-row {
+  contain: layout style;
+}
+
+.ant-col {
+  contain: layout style;
+  display: flex !important;
+  justify-content: center;
+}
+
+/* カードの安定化 */
+.ant-card {
+  contain: layout style;
+  width: 100% !important;
+  max-width: 280px;
+  transition: height 0.2s ease;
+}
+
+/* AddForm専用のスタイル */
+.ant-card:has(.ant-input) {
+  max-width: none !important;
+}
+
+/* カードボディの最適化 */
+.ant-card-body {
+  contain: layout style;
+  padding: 12px !important;
+  overflow: hidden;
+}
+
+.ant-card-actions {
+  padding: 8px 12px !important;
+  margin: 0 !important;
+}
+
+/* アイコンの安定化 */
+.anticon {
+  contain: layout style;
+  font-display: block; /* アイコンフォントの最適化 */
+}
+
+/* テキストの安定化 */
+.ant-typography {
+  contain: layout style;
+  font-display: swap;
+}
