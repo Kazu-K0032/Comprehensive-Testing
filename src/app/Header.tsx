@@ -2,8 +2,8 @@
 
 import { Layout, Typography, Menu } from "antd";
 import { useRouter, usePathname } from "next/navigation";
-import { AccountManagement } from "@/features/account-management";
 import { useAccount } from "@/contexts/account-context";
+import { AccountManagement } from "@/features/account-management";
 import { SITE_TITLE, CONTENT_CONFIG } from "@/constants/globals.constants";
 
 const { Header: AntHeader } = Layout;
