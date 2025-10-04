@@ -1,14 +1,14 @@
 import React from "react";
-import { render, screen, waitFor, fireEvent } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import "@testing-library/jest-dom";
 import { message } from "antd";
-import { TodoMemo } from "./TodoMemo";
+import { TaskStatus } from "@prisma/client";
+import { useAccount } from "../../contexts/account-context";
 import { AccountProvider } from "../../contexts/account-context";
 import { useTodoMemo } from "./useTodoMemo";
-import { useAccount } from "../../contexts/account-context";
+import { TodoMemo } from "./TodoMemo";
 import { mockTodos } from "./TodoMemo.mock";
-import { TaskStatus } from "@prisma/client";
-import "@testing-library/jest-dom";
 
 // Jest型定義の明示的インポート
 /// <reference types="jest" />
@@ -37,7 +37,7 @@ jest.mock("../../contexts/account-context", () => ({
 
 // formatDateユーティリティのモック
 jest.mock("../../utils/date.utils", () => ({
-  formatDate: jest.fn((date: Date, options?: any) => {
+  formatDate: jest.fn((date: Date) => {
     return date.toLocaleDateString("ja-JP");
   }),
 }));
