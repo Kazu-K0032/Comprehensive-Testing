@@ -1,8 +1,8 @@
 "use client";
 
+import { AccountManagementProps } from "@/types/account.types";
 import { AccountSelector } from "./components/AccountSelector";
 import { useAccountManagement } from "./useAccountManagement";
-import { AccountManagementProps } from "./AccountManagement.types";
 
 export default function AccountManagement({
   selectedAccountId,

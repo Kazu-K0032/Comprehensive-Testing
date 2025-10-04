@@ -7,25 +7,30 @@ Object.defineProperty(window, "matchMedia", {
     matches: false,
     media: query,
     onchange: null,
-    addListener: jest.fn(), // deprecated
-    removeListener: jest.fn(), // deprecated
+    addListener: jest.fn(),
+    removeListener: jest.fn(),
     addEventListener: jest.fn(),
     removeEventListener: jest.fn(),
     dispatchEvent: jest.fn(),
   })),
 });
 
-// コンソールエラーを抑制（テスト中の不要なエラーを非表示）
+// Reactのact()警告を抑制
 const originalError = console.error;
 beforeAll(() => {
   console.error = (...args) => {
     if (
       typeof args[0] === "string" &&
-      args[0].includes("Warning: ReactDOM.render is no longer supported")
+      (args[0].includes("Warning: An update to") ||
+        args[0].includes("Warning: The current testing environment") ||
+        args[0].includes("Warning:") ||
+        args[0].includes("act(") ||
+        args[0].includes("警告: 更新が") ||
+        args[0].includes("警告: 現在のテスト環境"))
     ) {
       return;
     }
-    originalError.call(console, ...args);
+    originalError(...args);
   };
 });
 

@@ -1,9 +1,9 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { Select, Avatar } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
 import { Account } from "@prisma/client";
-import { useRouter } from "next/navigation";
 
 interface AccountSelectorProps {
   accounts: Account[];

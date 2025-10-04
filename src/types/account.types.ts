@@ -6,7 +6,7 @@ export type AccountType = Account;
 // UI関連の型
 export interface AccountManagementProps {
   selectedAccountId?: string;
-  onAccountSelect?: (accountId: string) => void;
+  onAccountSelect?: (accountId: string) => void; // アカウント選択時のコールバック
 }
 
 // API通信の型定義
