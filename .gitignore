@@ -50,6 +50,9 @@ jmeter-tests/
 *.jmx
 jmeter.log
 
+# ZAP
+zap-reports/
+zap-*.html
 # Load Testing
 todo-load-tests/results/
 todo-load-tests/*.jtl

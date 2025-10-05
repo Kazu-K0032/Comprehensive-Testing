@@ -70,3 +70,22 @@ cd apache-jmeter-5.6.3
 **注意:** WSL2 環境では GUI 版が制限される場合があります。詳細は [JMeter セットアップガイド](./docs/jmeter/JMETER_SETUP.md) を参照してください。
 
 詳細な手順は [JMeter セットアップガイド](./docs/jmeter/JMETER_SETUP.md) を参照してください。
+
+## OWASP ZAP（脆弱性診断）
+
+### ドキュメント
+
+- [ZAP セットアップ](./docs/security/ZAP_SETUP.md)
+
+### すぐ使う
+
+```
+# Baseline（非破壊）
+./scripts/zap-baseline.sh http://localhost:3000
+
+# Full（破壊的）
+./scripts/zap-full.sh http://localhost:3000
+
+# API Scan（OpenAPI）
+./scripts/zap-api.sh http://localhost:3000/openapi.json
+```
