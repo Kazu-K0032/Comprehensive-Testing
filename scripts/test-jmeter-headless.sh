@@ -94,8 +94,9 @@ log_success "サンプルテスト計画を作成しました: $TEST_DIR/sample-
 log_info "ヘッドレスモードでテストを実行しています..."
 cd "$JMETER_DIR"
 
-# 結果ディレクトリ作成
+# 結果ディレクトリ作成（既存の場合は削除）
 RESULTS_DIR="../$TEST_DIR/results"
+rm -rf "$RESULTS_DIR"
 mkdir -p "$RESULTS_DIR"
 
 # テスト実行

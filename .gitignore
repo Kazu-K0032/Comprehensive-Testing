@@ -49,3 +49,12 @@ jmeter-tests/
 *.jtl
 *.jmx
 jmeter.log
+
+# Load Testing
+todo-load-tests/results/
+todo-load-tests/*.jtl
+load-test-results/
+
+todo-load-tests-fixed/results/
+todo-load-tests-fixed/*.jtl
+load-test-results-fixed/
